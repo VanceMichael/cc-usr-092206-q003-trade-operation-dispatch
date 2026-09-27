@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "外贸日监测平台示例资料",
+  "type": "object",
+  "required": [
+    "sample_id",
+    "unit",
+    "prefectures",
+    "directory",
+    "declarations",
+    "serviceItems",
+    "importGrowth",
+    "priorYear"
+  ],
+  "properties": {
+    "sample_id": { "type": "string", "minLength": 1 },
+    "unit": { "type": "string", "minLength": 1 },
+    "prefectures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["prefectureId", "name"],
+        "properties": {
+          "prefectureId": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "directory": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["enterpriseId", "name", "prefectureId"],
+        "properties": {
+          "enterpriseId": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "prefectureId": { "type": "string", "minLength": 1 },
+          "categories": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "declarations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "enterpriseId",
+          "direction",
+          "category",
+          "goods",
+          "value",
+          "occurredAt",
+          "reporter",
+          "channel",
+          "reportedAt"
+        ],
+        "properties": {
+          "customsNo": { "type": "string" },
+          "carrier": { "type": "string" },
+          "blNo": { "type": "string" },
+          "enterpriseId": { "type": "string", "minLength": 1 },
+          "direction": { "enum": ["import", "export"] },
+          "category": { "type": "string", "minLength": 1 },
+          "goods": { "type": "string", "minLength": 1 },
+          "value": { "type": "number" },
+          "occurredAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "reporter": { "type": "string", "minLength": 1 },
+          "channel": { "enum": ["企业自报", "市州汇总", "海关反馈"] },
+          "reportedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "knownAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "serviceItems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "enterpriseId", "kind", "summary", "owner", "committedBy", "status", "openedAt"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "enterpriseId": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "owner": { "type": "string", "minLength": 1 },
+          "committedBy": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "status": { "enum": ["open", "done"] },
+          "result": { "type": "string" },
+          "openedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "closedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "importGrowth": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["period", "growth"],
+        "properties": {
+          "period": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+          "growth": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "priorYear": {
+      "type": "object",
+      "required": ["period", "direction", "total", "categories"],
+      "properties": {
+        "period": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+        "direction": { "enum": ["import", "export"] },
+        "total": { "type": "number" },
+        "categories": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "type": "number" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

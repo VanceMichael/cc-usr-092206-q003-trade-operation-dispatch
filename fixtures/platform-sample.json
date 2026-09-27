@@ -1,0 +1,74 @@
+{
+  "sample_id": "platform-sample-001",
+  "unit": "万元",
+  "prefectures": [
+    { "prefectureId": "PF-01", "name": "云岭市" },
+    { "prefectureId": "PF-02", "name": "北港州" }
+  ],
+  "directory": [
+    { "enterpriseId": "ENT-001", "name": "示例果品进口公司", "prefectureId": "PF-01", "categories": ["热带水果"] },
+    { "enterpriseId": "ENT-002", "name": "示例矿业原料公司", "prefectureId": "PF-02", "categories": ["矿石原料", "盐湖化工"] },
+    { "enterpriseId": "ENT-003", "name": "示例生鲜贸易公司", "prefectureId": "PF-01", "categories": ["热带水果"] },
+    { "enterpriseId": "ENT-004", "name": "示例水产进口公司", "prefectureId": "PF-02", "categories": ["冷水鱼"] },
+    { "enterpriseId": "ENT-005", "name": "示例盐湖化工公司", "prefectureId": "PF-01", "categories": ["盐湖化工"] }
+  ],
+  "declarations": [
+    { "customsNo": "C260801", "carrier": "X8021 班列", "blNo": "BL260801", "enterpriseId": "ENT-001", "direction": "import", "category": "热带水果", "goods": "鲜榴莲", "value": 30, "occurredAt": "2026-08-12", "reporter": "ENT-001", "channel": "企业自报", "reportedAt": "2026-08-13" },
+    { "customsNo": "C260801", "carrier": "X8021 班列", "blNo": "BL260801", "enterpriseId": "ENT-001", "direction": "import", "category": "热带水果", "goods": "鲜榴莲", "value": 30, "occurredAt": "2026-08-12", "reporter": "PF-01", "channel": "市州汇总", "reportedAt": "2026-08-15" },
+    { "customsNo": "C260802", "carrier": "KY320 航班", "blNo": "BL260802", "enterpriseId": "ENT-003", "direction": "import", "category": "热带水果", "goods": "鲜山竹", "value": 18, "occurredAt": "2026-08-19", "reporter": "ENT-003", "channel": "企业自报", "reportedAt": "2026-08-20" },
+    { "customsNo": "C260803", "carrier": "X8036 班列", "blNo": "BL260803", "enterpriseId": "ENT-002", "direction": "import", "category": "矿石原料", "goods": "锂辉石精矿", "value": 84, "occurredAt": "2026-08-09", "reporter": "ENT-002", "channel": "企业自报", "reportedAt": "2026-08-10" },
+    { "customsNo": "C260803", "carrier": "X8036 班列", "blNo": "BL260803", "enterpriseId": "ENT-002", "direction": "import", "category": "矿石原料", "goods": "锂辉石精矿", "value": 85, "occurredAt": "2026-08-09", "reporter": "CUSTOMS", "channel": "海关反馈", "reportedAt": "2026-08-25" },
+    { "customsNo": "C260804", "carrier": "COS118 航次", "blNo": "BL260804", "enterpriseId": "ENT-004", "direction": "import", "category": "冷水鱼", "goods": "冷冻三文鱼", "value": 35, "occurredAt": "2026-08-28", "reporter": "CUSTOMS", "channel": "海关反馈", "reportedAt": "2026-08-30" },
+    { "customsNo": "C260805", "carrier": "ZK552 班列", "blNo": "BL260805", "enterpriseId": "ENT-005", "direction": "export", "category": "盐湖化工", "goods": "碳酸锂", "value": 60, "occurredAt": "2026-08-17", "reporter": "ENT-005", "channel": "企业自报", "reportedAt": "2026-08-18" },
+    { "customsNo": "C260806", "carrier": "ZK553 班列", "blNo": "BL260806", "enterpriseId": "ENT-002", "direction": "export", "category": "盐湖化工", "goods": "钾肥", "value": 40, "occurredAt": "2026-08-21", "reporter": "ENT-002", "channel": "企业自报", "reportedAt": "2026-08-22" },
+    { "customsNo": "C260806", "carrier": "ZK553 班列", "blNo": "BL260806", "enterpriseId": "ENT-002", "direction": "export", "category": "盐湖化工", "goods": "钾肥", "value": 40, "occurredAt": "2026-08-21", "reporter": "PF-02", "channel": "市州汇总", "reportedAt": "2026-08-24" },
+    { "customsNo": "C260701", "carrier": "KY308 航班", "blNo": "BL260701", "enterpriseId": "ENT-003", "direction": "import", "category": "热带水果", "goods": "鲜菠萝", "value": 120, "occurredAt": "2026-07-22", "reporter": "CUSTOMS", "channel": "海关反馈", "reportedAt": "2026-07-30" },
+    { "customsNo": "C260702", "carrier": "X8018 班列", "blNo": "BL260702", "enterpriseId": "ENT-001", "direction": "import", "category": "热带水果", "goods": "鲜龙眼", "value": 12, "occurredAt": "2026-07-28", "reporter": "CUSTOMS", "channel": "海关反馈", "reportedAt": "2026-09-05" }
+  ],
+  "serviceItems": [
+    { "id": "SI-001", "enterpriseId": "ENT-002", "kind": "班列计划", "summary": "锂辉石精矿进口需增加中亚班列舱位", "owner": "市州调度员-07", "committedBy": "2026-09-30", "status": "open", "openedAt": "2026-09-12" },
+    { "id": "SI-002", "enterpriseId": "ENT-001", "kind": "单证堵点", "summary": "鲜榴莲检疫证书在口岸查验环节滞留", "owner": "省级协调员-03", "committedBy": "2026-09-22", "status": "done", "result": "口岸联合查验通道当日办结，9月22日放行", "openedAt": "2026-09-10", "closedAt": "2026-09-22" },
+    { "id": "SI-003", "enterpriseId": "ENT-004", "kind": "冷链查验", "summary": "冷冻三文鱼冷链查验预约排队时间过长", "owner": "市州调度员-12", "committedBy": "2026-09-25", "status": "open", "openedAt": "2026-09-15" }
+  ],
+  "importGrowth": [
+    { "period": "2023-12", "growth": 0.152 },
+    { "period": "2024-01", "growth": 0.082 },
+    { "period": "2024-02", "growth": -0.031 },
+    { "period": "2024-03", "growth": 0.054 },
+    { "period": "2024-04", "growth": 0.071 },
+    { "period": "2024-05", "growth": 0.049 },
+    { "period": "2024-06", "growth": -0.012 },
+    { "period": "2024-07", "growth": 0.063 },
+    { "period": "2024-08", "growth": 0.088 },
+    { "period": "2024-09", "growth": 0.041 },
+    { "period": "2024-10", "growth": -0.022 },
+    { "period": "2024-11", "growth": 0.017 },
+    { "period": "2024-12", "growth": 0.095 },
+    { "period": "2025-01", "growth": -0.046 },
+    { "period": "2025-02", "growth": 0.032 },
+    { "period": "2025-03", "growth": 0.068 },
+    { "period": "2025-04", "growth": 0.024 },
+    { "period": "2025-05", "growth": -0.018 },
+    { "period": "2025-06", "growth": 0.057 },
+    { "period": "2025-07", "growth": 0.079 },
+    { "period": "2025-08", "growth": 0.036 },
+    { "period": "2025-09", "growth": -0.008 },
+    { "period": "2025-10", "growth": 0.062 },
+    { "period": "2025-11", "growth": 0.028 },
+    { "period": "2025-12", "growth": 0.091 },
+    { "period": "2026-01", "growth": 0.014 },
+    { "period": "2026-02", "growth": -0.037 },
+    { "period": "2026-03", "growth": 0.066 },
+    { "period": "2026-04", "growth": 0.048 },
+    { "period": "2026-05", "growth": 0.073 },
+    { "period": "2026-06", "growth": 0.059 },
+    { "period": "2026-07", "growth": 0.084 },
+    { "period": "2026-08", "growth": 0.12 }
+  ],
+  "priorYear": {
+    "period": "2025-08",
+    "direction": "import",
+    "total": 150,
+    "categories": { "热带水果": 40, "矿石原料": 72, "冷水鱼": 38 }
+  }
+}
