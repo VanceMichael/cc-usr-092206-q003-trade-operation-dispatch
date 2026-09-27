@@ -8,7 +8,8 @@
     "sample_id",
     "actors",
     "facts",
-    "constraints"
+    "constraints",
+    "platform"
   ],
   "properties": {
     "domain": {
@@ -43,6 +44,101 @@
       "items": {
         "type": "string"
       }
+    },
+    "platform": {
+      "type": "object",
+      "required": [
+        "name",
+        "levels",
+        "cadence",
+        "monitored_commodities",
+        "dedup",
+        "late_arrival",
+        "publication",
+        "access",
+        "commitment"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "levels": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "cadence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "monitored_commodities": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "dedup": {
+          "type": "string",
+          "minLength": 1
+        },
+        "late_arrival": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication": {
+          "type": "string",
+          "minLength": 1
+        },
+        "access": {
+          "type": "object",
+          "required": [
+            "enterprise",
+            "prefecture",
+            "province"
+          ],
+          "properties": {
+            "enterprise": {
+              "type": "string",
+              "minLength": 1
+            },
+            "prefecture": {
+              "type": "string",
+              "minLength": 1
+            },
+            "province": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "commitment": {
+          "type": "object",
+          "required": [
+            "fields",
+            "carry_into"
+          ],
+          "properties": {
+            "fields": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "string"
+              }
+            },
+            "carry_into": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
